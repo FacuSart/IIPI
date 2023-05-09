@@ -1,49 +1,47 @@
-#hero{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    height: 95vh;
-    color: var(--white-color1);
-    width: 95%;
-    margin:auto;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    text-align: center;
-    background-image: linear-gradient(
-        0deg,
-        rgba(0,0,0,0.5),
-        rgba(0,0,0,0.5)
-        ),
-        url("../Media/IIPI.png");
+main{
+    #hero{
+        
+        height: 95vh;
+        color: var(--white-color1);
+        width: 95vw;
+        margin:auto;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-align: center;
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+            ),
+            url("../Media/hero.jpg");
         background-repeat: no-repeat;
         background-size:cover;
         background-position: center center;
         padding-bottom: -50px;
-        
+        h1{
+            font-size: 5em;
+            color: white;
+            margin: 67px 0px;
+        }  
+        button{
+            
+            background-color: white;
+            cursor: pointer;
+            border: none;
+            padding:16px 32px;
+            color: black;
+            font-size: 2rem;
+            position: relative;
+            font-weight: bold;
+            border-radius: 12px;
+            transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+            &:hover{
+                background-color:green;
+                box-shadow: 0px 0px 20px black;
+                color: white;
+            }
+        }
+    }    
     
-}
-
-#hero h1{
-    font-size: 5em;
-    color: white;
-    margin: 67px 0px;
-}
-
-#hero button{
-    background-color: var(--green-color1);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 2em;
-    padding: 20px;
-    border-radius: 15px;
-    color: var(--white-color1);
-    border-color: green;
-    border-style: none;
-    font-weight: bolder;
-}
-
-#hero button:hover{
-    background-color: rgb(0, 114, 0);
-    cursor: pointer;
 }
 
 #somos-IIPI .container{

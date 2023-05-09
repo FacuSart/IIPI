@@ -1,7 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap");
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Roboto Slab", serif;
 }
 
 html {
@@ -12,219 +14,82 @@ html {
   --white-color1:rgba(255, 255, 255, 0.877);
 }
 
+@keyframes glowing {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
 header {
+  box-shadow: 0px 0px 10px black;
+  z-index: 2;
   position: fixed;
-  background-color: white;
-  width: 100%;
-  box-shadow: 0px 1px 10px black;
 }
-header .navbar {
-  padding-right: 50px;
-}
-header .navbar .container-fluid .navbar-nav .nav-item .nav-link {
-  padding: 15px;
+header .navbar .container-fluid #logo {
   color: black;
-  text-decoration: none;
-  font-size: 20px;
-  text-align: center;
-  display: flex;
+  transition: color 0.25s;
 }
-
-@media (min-width: 768px) {
-  header .navbar {
-    padding-right: 0;
-  }
-  #somos-IIPI .img-cont {
-    background-image: url("/Proyectos/Pag I.I.P.I/media/IIPI2.jpg");
-    background-size: cover;
-    background-position: center center;
-    width: 450px;
-    height: 450px;
-    border-radius: 50%;
-    box-shadow: 0px 0px 20px black;
-  }
-  #somos-IIPI .container {
-    display: flex;
-    justify-content: space-evenly;
-  }
-  #somos-IIPI h2 {
-    font-size: 3em;
-    font-weight: bolder;
-  }
-  #somos-IIPI .texto {
-    width: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.5em;
-  }
-  .dropdown {
-    position: relative;
-  }
-  .dropdown a {
-    display: flex;
-    align-items: center;
-    gap: 2px;
-    height: 50px;
-  }
-  .dropdown a i {
-    width: 20px;
-  }
-  .dropdown:hover .menu {
-    opacity: 1;
-    visibility: visible;
-  }
-  .menu a {
-    font-size: 1em;
-    visibility: visible;
-    color: var(--green-color1);
-    justify-content: center;
-  }
-  .menu a:hover {
-    background: white;
-    opacity: 0.7;
-    border-radius: 10px;
-  }
-  .menu {
-    position: absolute;
-    top: 60px;
-    right: -10px;
-    display: grid;
-    width: 150px;
-    padding: 4px 0;
-    border-radius: 10px;
-    border: 1px solid var(--white-color1);
-    box-shadow: 0 40px 40px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.25s;
-    background-color: var(--white-color1);
-  }
-  .menu::before {
-    content: "";
-    background-color: var(--white-color1);
-    position: absolute;
-    opacity: 1;
-    top: -7px;
-    right: 22px;
-    width: 12px;
-    height: 12px;
-    rotate: -45deg;
-    border-bottom-left-radius: 100%;
-  }
-  #caract .img-cont {
-    background-image: url("/Proyectos/Pag I.I.P.I/media/foto1.png");
-    background-size: cover;
-    background-position: center center;
-    width: 550px;
-    height: 400px;
-    box-shadow: 5px 10px 20px black;
-  }
-  #caract .container {
-    display: flex;
-    justify-content: space-evenly;
-    background-color: var(--green-color1);
-    padding: 200px 12px;
-    margin-bottom: 10px;
-  }
-  #caract h2 {
-    font-size: 3em;
-    font-weight: bolder;
-    margin-top: 10px;
-  }
-  #caract .texto {
-    width: 50%;
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    font-size: 1.5em;
-    color: var(--white-color1);
-  }
+header .navbar .container-fluid #logo:hover {
+  color: green;
 }
-header nav {
-  display: flex;
-  flex-direction: column;
-  padding: 0;
+header .navbar .container-fluid #navbarNav .navbar-nav .nav-item .nav-link {
+  position: relative;
 }
-
-header .container {
-  display: flex;
-  justify-content: center;
-  margin: 0px 100px;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-#somos-IIPI h2 {
-  font-size: 3em;
-}
-
-.menu {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.menu a {
-  padding: 15px 100%;
+header .navbar .container-fluid #navbarNav .navbar-nav .nav-item .nav-link::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  border-left: 1px solid var(--green-color1);
-  border-right: 1px solid var(--green-color1);
-  border-top: 1px solid var(--green-color1);
-  border-radius: 3px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  height: 2px;
+  background-color: black;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.5s;
+}
+header .navbar .container-fluid #navbarNav .navbar-nav .nav-item .nav-link:hover::before {
+  transform: scaleX(1);
 }
 
-.menu a:hover {
-  color: var(--white-color1);
-  background-color: var(--green-color1);
-}
-
-#hero {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+main #hero {
   height: 95vh;
   color: var(--white-color1);
-  width: 95%;
+  width: 95vw;
   margin: auto;
   font-family: Georgia, "Times New Roman", Times, serif;
   text-align: center;
-  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Media/IIPI.png");
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../Media/hero.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
   padding-bottom: -50px;
 }
-
-#hero h1 {
+main #hero h1 {
   font-size: 5em;
   color: white;
   margin: 67px 0px;
 }
-
-#hero button {
-  background-color: var(--green-color1);
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2em;
-  padding: 20px;
-  border-radius: 15px;
-  color: var(--white-color1);
-  border-color: green;
-  border-style: none;
-  font-weight: bolder;
-}
-
-#hero button:hover {
-  background-color: rgb(0, 114, 0);
+main #hero button {
+  background-color: white;
   cursor: pointer;
+  border: none;
+  padding: 16px 32px;
+  color: black;
+  font-size: 2rem;
+  position: relative;
+  font-weight: bold;
+  border-radius: 12px;
+  transition: background-color 0.5s, color 0.5s, box-shadow 0.5s;
+}
+main #hero button:hover {
+  background-color: green;
+  box-shadow: 0px 0px 20px black;
+  color: white;
 }
 
 #somos-IIPI .container {
