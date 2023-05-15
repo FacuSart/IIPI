@@ -1,0 +1,56 @@
+main{
+    iframe{
+        padding-top: 10vh;
+    }
+}
+
+.nav__clases{
+    height: 10vh;
+    ul{
+        li{
+            a{
+                color: map-get($colors, black1);
+                &:hover{
+                    color: map-get($colors, green1);
+                }
+            }
+        }
+    }
+}
+.main__crono__grid{
+    display: grid;
+    grid-template-columns: repeat(6, auto) ;
+    grid-template-rows: 7vh repeat(3, auto);
+    row-gap: 20px;
+    column-gap: 20px;
+    width: 75%;
+    height: map-get($tamanos, 90vh);
+    background-color: transparent;
+    margin: auto;
+    .main__crono__grid__negro{
+        h2{
+            margin: 0;
+        }
+        .green{
+            color: map-get($colors, green1);
+        }
+        padding: 0 20px;
+        border-radius: 10px;
+        background-color: map-get($colors, black1);
+        color: map-get($colors, white1);
+        display: flex;
+        justify-content:  map-get($justify, center);
+        align-items: map-get($align, center);
+        width: 100%;  
+    }
+    
+    .main__crono__grid__info{
+        @extend .main__crono__grid__negro;
+        background-color: grey;
+        flex-direction: column;
+        box-shadow: 0 0 5px black;
+        text-align: center;
+        color: map-get($colors, black1);
+        
+    }
+}
